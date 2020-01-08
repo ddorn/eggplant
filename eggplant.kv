@@ -1,0 +1,20 @@
+<Eggplant>:
+    MDRaisedButton:
+        text: "Double mass"
+        on_press: root.get_planet('Earth').mass *= 2
+
+
+<PlanetWidget>:
+    color: self.planet.color
+    size: (20, 20)
+    canvas:
+        Color:
+            rgba: self.color
+        Line:
+            points: self.mult_to_screen(self.trail) if self.planet.name != 'Moon' else self.trail
+            width: 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
